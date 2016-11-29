@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Оптовая торговля и дистрибуция товаров</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/main.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.carousel').carousel();
+			$('.collapse:not(#nav-btn)').collapse();
+			$("form").submit(function () {
+				// Получение ID формы
+				var formID = $(this).attr('id');
+				// Добавление решётки к имени ID
+				var formNm = $('#' + formID);
+				$.ajax({
+					type: "POST"
+					, url: './mail.php'
+					, data: formNm.serialize()
+					, success: function (data) {
+						// Вывод текста результата отправки
+						$(formNm).html(data);
+					}
+					, error: function (jqXHR, text, error) {
+						// Вывод текста ошибки отправки
+						$(formNm).html(error);
+					}
+				});
+				return false;
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="row">
+					<div class="col-lg-8 col-xs-12">
+						<a href="#" class="navbar-brand"> <img src="images/logo.svg" alt="" class="img-responsive" id="logotype"> Оптовая торговля и дистрибуция товаров </a>
+					</div>
+					<div class="col-lg-4 col-xs-12">
+						<button type="button" data-toggle="collapse" data-target="#nav-btn" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+					</div>
+				</div>
+			</div>
+			<div id="nav-btn" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#"><img src="images/1.png"><span>8 (8172) 79-01-11</span></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/2.png"><span>sales@maxi-net.ru</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="greet col-lg-12">
+				<div class="first-offer">
+					<h1>Скачайте прайс-лист прямо сейчас и получите скидку на свой первый заказ!</h1>
+					<div class="devider white"></div>
+					<form id="first-offer">
+						<div class="row">
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="tel" placeholder="Телефон" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="email" placeholder="E-mail" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="submit" class="form-control custom-control btn btn-custom-grad" value="Скачайте прайс-лист"> </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="benefit col-lg-12">
+				<h2>Узнайте, почему с нами выгодно сотрудничать!</h2>
+				<div class="devider black"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="parent-about col-lg-12">
+				<div class="row">
+					<div class="about-vert col-lg-6 col-md-12"><img src="images/assortyment.jpg" class="img-responsive">
+						<p class="bold">Широкий ассортимент</p>
+						<p>Более 9000 наименований (SKU)</p>
+					</div>
+					<div class="about-vert col-lg-6 col-md-12"><img src="images/calendar.jpg" class="img-responsive">
+						<p class="bold">Отсрочка</p>
+						<p>Возможность предоставления отсрочки платежа до 45 дней</p>
+					</div>
+					<div class="about-vert col-lg-6 col-md-12"><img src="images/car.jpg" class="img-responsive">
+						<p class="bold">Удобство</p>
+						<p>Доставка товара до вашей торговой точки</p>
+					</div>
+					<div class="about-vert col-lg-6 col-md-12"><img src="images/comfort.jpg" class="img-responsive">
+						<p class="bold">Комфорт</p>
+						<p>Оптовый центр с большими стоянками, удобными подъездными путями и столовой</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="special-offer pattern col-lg-12">
+				<h2>Акции и специальные предложения</h2>
+				<div class="devider black"></div>
+				<div id="slider" data-ride="carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#slider" data-slide-to="0" class="active"></li>
+						<li data-target="#slider" data-slide-to="1"></li>
+						<li data-target="#slider" data-slide-to="2"></li>
+						<li data-target="#slider" data-slide-to="3"></li>
+						<li data-target="#slider" data-slide-to="4"></li>
+						<li data-target="#slider" data-slide-to="5"></li>
+					</ol>
+					<div role="listbox" class="carousel-inner">
+						<div class="item active"><img src="images/slider0.jpg" class="img-responsive"></div>
+						<div class="item"><img src="images/slider1.jpg" class="img-responsive"></div>
+						<div class="item"><img src="images/slider2.jpg" class="img-responsive"></div>
+						<div class="item"><img src="images/slider3.jpg" class="img-responsive"></div>
+						<div class="item"><img src="images/slider4.jpg" class="img-responsive"></div>
+						<div class="item"><img src="images/slider5.jpg" class="img-responsive"></div>
+					</div>
+					<a href="#slider" role="button" data-slide="prev" class="left carousel-control"><img src="images/left.png"></a>
+					<a href="#slider" role="button" data-slide="next" class="right carousel-control"><img src="images/right.png"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="hot-offer col-lg-12">
+				<h2>Посмотрите самые востребованные товарные группы</h2>
+				<div class="devider black"></div>
+				<div class="container">
+					<div class="product col-lg-3 col-md-12"><img src="images/candies.png"><span>Кондитерские изделия</span>
+						<div class="describe">
+							<h4>Кондитерские изделия</h4>
+							<ul>
+								<li>Конфеты</li>
+								<li>Печенье</li>
+								<li>Шоколад</li>
+								<li>Бисквиты</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/oil-fat.png"><span>Масло-жировая продукция</span>
+						<div class="describe">
+							<h4>Масло-жировая продукция</h4>
+							<ul>
+								<li>Соус \ майонезы</li>
+								<li>Масло \ маргарин</li>
+								<li>Молочные продукты</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/coffee.png"><span>Чай, кофе</span>
+						<div class="describe">
+							<h4>Чай, кофе</h4>
+							<ul>
+								<li>Чай</li>
+								<li>Кофе</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/cheese.png"><span>Сыры</span>
+						<div class="describe">
+							<h4>Сыры</h4>
+							<ul>
+								<li>Твердые</li>
+								<li>Плавленные</li>
+								<li>Копченые</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="product col-lg-3 col-md-12"><img src="images/drinks.png"><span>Напитки</span>
+						<div class="describe">
+							<h4>Напитки</h4>
+							<ul>
+								<li>Соки</li>
+								<li>Нектары</li>
+								<li>Мин.вода</li>
+								<li>Газ.вода</li>
+								<li>Энергетические напитки</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/food.png"><span>Бакалея</span>
+						<div class="describe">
+							<h4>Бакалея</h4>
+							<ul>
+								<li>Соль</li>
+								<li>Сахар</li>
+								<li>Мука</li>
+								<li>Макароны</li>
+								<li>Крупы</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/conserves.png"><span>Консервация</span>
+						<div class="describe">
+							<h4>Консервация</h4>
+							<ul>
+								<li>Мясная</li>
+								<li>Рыбная</li>
+								<li>Овощная</li>
+								<li>Фруктово-ягодная</li>
+							</ul>
+						</div>
+					</div>
+					<div class="product col-lg-3 col-md-12"><img src="images/snecks.png"><span>Снековая продукция</span>
+						<div class="describe">
+							<h4>Снековая продукция</h4>
+							<ul>
+								<li>Чипсы</li>
+								<li>Снеки</li>
+								<li>Сухарики</li>
+								<li>Семечки</li>
+							</ul>
+						</div>
+					</div>
+					<div class="card">
+						<h4>ПОЛНЫЙ СПИСОК ТОВАРОВ ВЫ НАЙДЁТЕ В ПРАЙС ЛИСТЕ</h4>
+						<button type="button" class="btn btn-custom-red-red">Скачать<span class="glyphicon glyphicon-chevron-right"></span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="representatives col-lg-12">
+				<h2>Почему с нами выгодно работать через торговых представителей</h2>
+				<div class="devider black"></div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/time.png" class="img-responsive">
+							<div class="content">
+								<p class="bold">Широкий ассортимент</p>
+								<p>Более 9000 наименований (SKU)</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/file.png" class="img-responsive">
+							<div class="content">
+								<p class="bold">Отсрочка</p>
+								<p>Возможность предоставления отсрочки платежа до 45 дней</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/talk.png" class="img-responsive">
+							<div class="content">
+								<p class="bold">Отсрочка</p>
+								<p>Возможность предоставления отсрочки платежа до 45 дней</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/carzine.png" class="img-responsive">
+							<div class="content">
+								<p class="bold">Отсрочка</p>
+								<p>Возможность предоставления отсрочки платежа до 45 дней</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="download col-lg-12">
+				<h2>Скачайте прайс-лист прямо сейчас и получите скидку на свой первый заказ!</h2>
+				<div class="devider black"></div>
+				<form id="download">
+					<div class="row">
+						<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="tel" placeholder="Телефон" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="email" placeholder="E-mail" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="submit" class="form-control custom-control btn btn-custom-red" value="Скачайте прайс-лист"> </div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="employee pattern col-lg-12">
+				<h2>Посмотрите, почему вам стоит с нами работать</h2>
+				<div class="devider black"></div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/persons.png" class="img-responsive">
+							<p class="bold">Более 3000 клиентов</p>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/truck.png" class="img-responsive">
+							<p class="bold">Более 500 поставщиков</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/arrows.png" class="img-responsive">
+							<p class="bold">Площадь складов более 55 000 м2</p>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/qwe.png" class="img-responsive">
+							<p class="bold">Отгружаем более 3500 тонн продукции в месяц!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/user.png" class="img-responsive">
+							<p class="bold">Для вас работает более 500 сотрудников</p>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"><img src="images/bars.png" class="img-responsive">
+							<p class="bold">Компания активно растет и развивается с 1996 г.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="partnership col-lg-12">
+				<h2>Наши поставщики</h2>
+				<div class="devider black"></div>
+				<div id="partner" data-ride="carousel" class="carousel slide">
+					<div role="listbox" class="carousel-inner">
+						<ol class="carousel-indicators">
+							<li data-target="#partner" data-slide-to="0" class="active"></li>
+							<li data-target="#partner" data-slide-to="1"></li>
+							<li data-target="#partner" data-slide-to="2"></li>
+							<li data-target="#partner" data-slide-to="3"></li>
+							<li data-target="#partner" data-slide-to="4"></li>
+							<li data-target="#partner" data-slide-to="5"></li>
+							<li data-target="#partner" data-slide-to="6"></li>
+							<li data-target="#partner" data-slide-to="7"></li>
+							<li data-target="#partner" data-slide-to="8"></li>
+							<li data-target="#partner" data-slide-to="9"></li>
+							<li data-target="#partner" data-slide-to="10"></li>
+							<li data-target="#partner" data-slide-to="11"></li>
+							<li data-target="#partner" data-slide-to="12"></li>
+						</ol>
+						<div class="item active">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>АО ТД «НМЖК»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Золотая Семечка»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Чайный Век»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «СДС-ФУДС</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>АО «Классик»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Мон`дэлис Русь»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Якобс Рус»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Объединенные кондитеры»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ОАО «Сладонеж»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Май-Фудс»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО ПК «МАКА»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Молочный завод «Янино»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>АО «Эссен Продакшн АГ»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «ППК» (ООО «ПЕТЕРБУРГСКАЯ ПРОДОВОЛЬСТВЕННАЯ КОРПОРАЦИЯ»)</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ОАО «КАРАТ»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «КАНТАЛЬ»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>АО «КОНСАР»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ОАО «Ламзурь»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ОАО «ПРОГРЕСС»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ПАО «РУССКИЙ ПРОДУКТ»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ТНВ «Сыр Стародубский»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «АгроСоюз» («Станичные байки»)</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ТМ «Сытый Боярин»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Даймонд Фудс»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Бондюэль-Кубань»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Уолл Стрит»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «СОВКОН»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ТНВ «Сыр Стародубский»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ЗАО «ХАМЕ ФУДС»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО Рыбокомбинат «За Родину»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «ДЯДЯ ВАНЯ Трейдинг»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Раздолье-Трейд»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ПАО «Петербургский мельничный комбинат»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="parent-about col-lg-12">
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Ангстрем»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>ООО «Маревен Фуд Сэнтрал»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<p>АО «Вимм-Билль-Данн»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="#partner" role="button" data-slide="prev" class="left carousel-control"><img src="images/left.png"></a>
+						<a href="#partner" role="button" data-slide="next" class="right carousel-control"><img src="images/right.png"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="scheme col-lg-12">
+				<h2>Ознакомьтесь со схемой работы</h2>
+				<div class="devider black"></div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow col-lg-6">
+									<img src="images/meeting.png" alt="" class="sq">
+								</div>
+								<div class="arrow-content col-lg-6">
+									1.Знакомство
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow-content-right col-lg-6">
+									2. Выяснение ваших потребностей
+								</div>
+								<div class="arrow-right col-lg-6">
+									<img src="images/conversation.png" alt="" class="sq-right">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow col-lg-6">
+									<img src="images/thumbup.png" alt="" class="sq">
+								</div>
+								<div class="arrow-content col-lg-6">
+									3. Обсуждение выгодных условий
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow-content-right col-lg-6">
+									4. Заключение договора
+								</div>
+								<div class="arrow-right col-lg-6">
+									<img src="images/list.png" alt="" class="sq-right">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow col-lg-6">
+									<img src="images/submit.png" alt="" class="sq">
+								</div>
+								<div class="arrow-content col-lg-6">
+									5. Формирование заказа
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow-content-right col-lg-6">
+									6. Отгрузка заказа
+								</div>
+								<div class="arrow-right col-lg-6">
+									<img src="images/transport.png" alt="" class="sq-right">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow col-lg-6">
+									<img src="images/payment.png" alt="" class="sq">
+								</div>
+								<div class="arrow-content col-lg-6">
+									7. Оплата
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="arrow-content-right col-lg-6">
+									8. Прибыль от реализации товара
+								</div>
+								<div class="arrow-right col-lg-6">
+									<img src="images/plus.png" alt="" class="sq-right">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<table class="table">
+							<tr>
+								<td>
+									<img src="images/meeting.png" alt="" class="img-responsive">
+									1. Знакомство
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/conversation.png" alt="" class="img-responsive">
+									2. Выяснение ваших потребностей
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/thumbup.png" alt="" class="img-responsive">
+									3. Обсуждение выгодных условий
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/list.png" alt="" class="img-responsive">
+									4. Заключение договора
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/submit.png" alt="" class="img-responsive">
+									5. Формирование заказа
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/transport.png" alt="" class="img-responsive">
+									6. Отгрузка заказа
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/payment.png" alt="" class="img-responsive">
+									7. Оплата
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/plus.png" alt="" class="img-responsive">
+									8. Прибыль от реализации товара
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="services col-lg-12">
+				<h2>Выгодные условия для вас</h2>
+				<div class="devider black"></div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/calculator.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Предлагаем выгодные для вас условия</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/gist.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Возможность заказа <br> некоторых наименований товара даже от 1 единицы</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/credit.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Наличный и безналичный расчет</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/arrows.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Один из самых больших <br> выставочных торговых залов в Вологде – 680 м<sup>2</sup></p>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="prefer pattern col-lg-12">
+				<h2>Мы подходим для вас, если Вы:</h2>
+				<div class="devider black"></div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/case.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Юридическое лицо или ИП</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/order.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Собираетесь сделать<br> заказ на сумму свыше 3 тыс. руб.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/support.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Хотите работать <br> с одной из крупнейших компаний Северо-Запада</p>
+							</div>
+						</div>
+						<div class="about-hor col-lg-6 col-md-12"> <img src="images/plus4.png" alt="" class="img-responsive">
+							<div class="content">
+								<p class="bold">Ищете надежного и стабильного партнера</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="feedback col-lg-12">
+				<h2>Посмотрите, что говорят наши клиенты</h2>
+				<div id="feedback" data-ride="carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#feedback" data-slide-to="0" class="active"></li>
+						<li data-target="#feedback" data-slide-to="1"></li>
+						<li data-target="#feedback" data-slide-to="2"></li>
+						<li data-target="#feedback" data-slide-to="3"></li>
+						<li data-target="#feedback" data-slide-to="4"></li>
+					</ol>
+					<div role="listbox" class="carousel-inner">
+						<div class="item active">
+							<p>С «Макси» мы сотрудничаем 10 лет и за это время увеличили оборот в 4 раза.</p>
+							<p>Компания обладает огромным ассортиментом - всю продукцию можно купить в одном месте, это очень удобно. Нам нравится работать через систему торговых представителей. Любимый менеджер у нас - Юлия, она помогает оперативно решить все вопросы.</p>
+							<p>Могу порекомендовать «Макси» всем, кому интересен широкий ассортимент и нет собственного автотранспорта для доставки.</p>
+							<p>Любовь, заведующая</p>
+						</div>
+						<div class="item">
+							<p>О компании «Макси» знают практически все на северо-западе. Мы сотрудничаем с 2011 года и постепенно увеличили оборот в 3 раза</p>
+							<p>Ключевым выбором в пользу «Макси» стали гибкие условия и профессионализм менеджеров.</p>
+							<p>Рекомендую всем работать с «Макси», потому что с менеджерами компании приятно общаться и практически всегда можно прийти к взаимовыгодному сотрудничеству.</p>
+							<p>Оксана, бухгалтер</p>
+						</div>
+						<div class="item">
+							<p>Наше сотрудничество с «Макси» началось более 2 лет назад после того, как нашу компанию посетили торговые торговые представители "Макси".</p>
+							<p>Ключевые потребности для нас: выгодная цена, широкий ассортимент и качество продукции. Компания «Макси» полностью удовлетворяет этим требованиям.</p>
+							<p>Отдельное спасибо хочется сказать супервайзеру Андрею – он очень хорошо организовал работу. Андрей отлично ориентируется на рынке и в товарной матрице, всегда может предложить тот товар, который нужен и выгоден для нас.</p>
+							<p>Рекомендую вам работать с компанией «Макси», так как они отвечают за качество своей продукции.</p>
+							<p>Ольга, коммерческий директор</p>
+						</div>
+						<div class="item">
+							<p>О компании «Макси» узнали от торговых представителей и сотрудничаем с ней уже более 12 лет.</p>
+							<p>Нам нравится работать с компанией, так как она предлагает широкий ассортимент товаров хорошего качества по выгодной цене.</p>
+							<p>Стоит отдельно сказать о сотрудниках компании. Все торговые представители и менеджеры компании «Макси», с которыми нам довелось работать, хорошо знают свою работу, инициативны, приятны в общении, помогают в решении наших вопросов. Хочу поблагодарить консультанта по продажам Веру – она работает на выписке товара - очень отзывчивая, грамотная и умная девушка, идет навстречу покупателям.</p>
+							<p>За время работы мы увеличили оборот в 5 раз и теперь дополнительно закупаем в «Макси» тушенку, конфеты, вафли. «Макси» - отличный выбор для оптовиков, потому что в одном месте вы можете закупить все, что вам необходимо, а это очень удобно. Всем рекомендуем!</p>
+							<p>Наталия, менеджер</p>
+						</div>
+						<div class="item">
+							<p>С компанией «Макси» работаем с 2006 года.</p>
+							<p>Сотрудничество с компанией очень удобно и выгодно для нас по ряду причин, в том числе:</p>
+							<ul>
+								<li>Своевременная доставка прямо до торговой точки.</li>
+								<li>Очень широкий ассортимент по сравнению с другими компаниями из Архангельска и Вологды.</li>
+								<li>Гибкая система скидок и различные акции.</li>
+							</ul>
+							<p>О проводимых акциях хотелось бы сказать отдельно. Обычно в период их проведения мы увеличиваем закупки в 7 раз. Наиболее часто приобретаемые товары во время акций: масло, тушёнка, сгущенка, чай.</p>
+							<p>Хотелось бы поблагодарить менеджера по продажам Ирину за работу с нами.</p>
+							<p>Всем, кто ценит широкий ассортимент, бесперебойную доставку товара, выгодные цены и общение с профессиональными менеджерами, рекомендую обращаться в компанию «Макси».</p>
+							<p>Ирина, товаровед</p>
+						</div>
+					</div>
+					<a href="#feedback" role="button" data-slide="prev" class="left carousel-control"><img src="images/left.png"></a>
+					<a href="#feedback" role="button" data-slide="next" class="right carousel-control"><img src="images/right.png"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="diplomas pattern col-lg-12">
+				<h2>Познакомьтесь с нашими достижениями</h2>
+				<div class="devider black"></div>
+				<div id="diploma" data-ride="carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#diploma" data-slide-to="0" class="active"></li>
+						<li data-target="#diploma" data-slide-to="1"></li>
+						<li data-target="#diploma" data-slide-to="2"></li>
+						<li data-target="#diploma" data-slide-to="3"></li>
+					</ol>
+					<div role="listbox" class="carousel-inner">
+						<div class="item active">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-0-1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-0-2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-0-3.jpg" alt="" class="img-responsive">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-1-1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-1-2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-1-3.jpg" alt="" class="img-responsive">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-2-1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-2-2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-2-3.jpg" alt="" class="img-responsive">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-3-1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-3-2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="about-vert col-lg-4 col-md-12">
+										<img src="images/diploma-3-3.jpg" alt="" class="img-responsive">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#diploma" role="button" data-slide="prev" class="left carousel-control"><img src="images/left.png"></a>
+					<a href="#diploma" role="button" data-slide="next" class="right carousel-control"><img src="images/right.png"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="download col-lg-12">
+				<h2>Скачайте прайс-лист прямо сейчас и получите скидку на свой первый заказ!</h2>
+				<div class="devider black"></div>
+				<form id="download-one-more-time">
+					<div class="row">
+						<div class="form-group col-lg-4 col-md-12">
+							<input type="text" class="form-control custom-control" id="tel" placeholder="Телефон" required> </div>
+						<div class="form-group col-lg-4 col-md-12">
+							<input type="text" class="form-control custom-control" id="email" placeholder="E-mail" required> </div>
+						<div class="form-group col-lg-4 col-md-12">
+							<input type="submit" class="form-control custom-control btn btn-custom-red" value="Скачайте прайс-лист"> </div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="stuff pattern col-lg-12">
+				<h2>Познакомьтесь с нашими сотрудниками</h2>
+				<div class="devider black"></div>
+				<div id="stuff" data-ride="carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#stuff" data-slide-to="0" class="active"></li>
+						<li data-target="#stuff" data-slide-to="1"></li>
+						<li data-target="#stuff" data-slide-to="2"></li>
+					</ol>
+					<div role="listbox" class="carousel-inner">
+						<div class="item active">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/paramonov.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Парамонов Андрей Евгеньевич</p>
+										<p>В моей компетенции доставка товара от поставщиков до склада и со склада клиентам</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/sivkov.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Сивков Денис Леонидович</p>
+										<p>Я отвечаю за работу складского комплекса</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/tiomkin.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Темкин Александр Викторович</p>
+										<p>Я отвечаю за развитие собственных торговых марок (СТМ) компании «Макси»</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/nieczaewa.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Нечаева Екатерина Михайловна</p>
+										<p>Продажи всего ассортимента товаров оптовым клиентам — моя сфера деятельности</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/kuzniecow.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Кузнецов Евгений Владимирович</p>
+										<p>Я отвечаю за работу и развитие оптовой сети «Макси»</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/bolod.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Болод Максим Андреевич</p>
+										<p>Я курирую продажи товаров через эксклюзивных торговых представителей</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="parent-about col-lg-12">
+								<div class="row">
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/turupaewa.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Турупаева Лариса Александровна</p>
+										<p>Я определяю политику закупок оптовых партий товаров</p>
+									</div>
+									<div class="about-vert col-lg-4 col-md-12"> <img src="images/warzin.jpg" alt="" class="img-responsive img-circle">
+										<p class="bold">Варзин Олег Александрович</p>
+										<p>Продвижение товаров поставщиков и согласование условий сотрудничества – это ко мне</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#stuff" role="button" data-slide="prev" class="left carousel-control"><img src="images/left.png"></a>
+					<a href="#stuff" role="button" data-slide="next" class="right carousel-control"><img src="images/right.png"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="faq col-lg-12">
+				<h2>Узнайте ответы на часто задаваемые вопросы</h2>
+				<div class="devider black"></div>
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="one" role="tab">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">+ Какая минимальная сумма заказа?</a>
+							</h4> </div>
+						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body"> Минимальный заказ начинается с 3 тыс. руб. </div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" id="two" role="tab">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">+ Осуществляете ли вы доставку, если да, то по каким регионам?</a>
+							</h4> </div>
+						<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body"> Доставка возможна в любую точку, конкретные условия доставки необходимо уточнять у вашего менеджера. </div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" id="three" role="tab">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">+ Какие сроки доставки?</a>
+							</h4> </div>
+						<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body"> С нашей базы ежедневно уходят десятки машин в разные регионы. В большинстве случаев графики поставки сформированы и согласованы с нашими клиентами, вы можете подстроиться под этот график или договориться о внеплановой доставке с нашим менеджером. </div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" id="four" role="tab">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">+ Как оформить заказ?</a>
+							</h4> </div>
+						<div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+							<div class="panel-body"> Вам необходимо заключить с нашей компанией договор, после чего вы можете приобрести понравившийся вам товар. </div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" id="five" role="tab">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">+ Как производится оплата?</a>
+							</h4> </div>
+						<div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+							<div class="panel-body"> Оплату можно произвести как безналичным способом, так и внесением наличных денежных средств в кассу. </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="place col-lg-12">
+				<h2>Узнайте, где находится главный офис компании</h2>
+				<div class="devider black"></div>
+				<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=UsCDk89FH_orVu2_bU_KCRm9qvpbA17Q&width=100%&height=630&lang=ru_RU&sourceType=constructor"></script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="download col-lg-12">
+				<h2>Скачайте прайс-лист прямо сейчас и получите скидку на свой первый заказ!</h2>
+				<div class="devider black"></div>
+				<form id="download-two-more-time">
+					<div class="row">
+						<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="tel" placeholder="Телефон" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="text" class="form-control custom-control" id="email" placeholder="E-mail" required> </div>
+							<div class="form-group col-lg-4 col-md-12">
+								<input type="submit" class="form-control custom-control btn btn-custom-red" value="Скачайте прайс-лист"> </div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="contact">
+				<h2>Свяжитесь с нашими менеджерами</h2>
+				<div class="devider black"></div>
+				<h3>Главный офис</h3>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12">
+							<img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Вологда, ул. Клубова, 87</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12">
+							<img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (8172) 79-01-11, 79-01-69, 79-92-78</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12">
+							<img src="images/hadzinnik.png" alt="" class="img-responsive">
+								<p>часы работы: 8:00-17:00   выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+				<h3>Филиалы</h3>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Великий Устюг, ул. Кирова, 104</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (81738) 2-19-33, 2-29-88</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/hadzinnik.png" alt="" class="img-responsive">
+							<p>часы работы: 8:00-17:00 выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Вельск, ул. Революционная, 3в</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (81836) 6-44-05, 6-45-75</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/hadzinnik.png" alt="" class="img-responsive">
+							<p>часы работы: 8:00-17:00 выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Череповец, ул. Беляева 16а, офисы 10, 11, 12</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (8202) 28-77-71, 26-89-35</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/hadzinnik.png" alt="" class="img-responsive">
+							<p>часы работы: 8:00-17:00 выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Ярославль, пр. Авиаторов, 151, офис 420</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (8172) 79-01-82</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/hadzinnik.png" alt="" class="img-responsive">
+							<p>часы работы: 8:00-17:00 выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+				<div class="parent-about col-lg-12">
+					<div class="row">
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/marker.png" alt="" class="img-responsive">
+							<p>г. Котлас, ул. Володарского, 21, офис 8</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/tel-czyrwony.png" alt="" class="img-responsive">
+							<p>8 (81837) 5-08-47</p>
+						</div>
+						<div class="about-vert col-lg-4 col-md-12"> <img src="images/hadzinnik.png" alt="" class="img-responsive">
+							<p>часы работы: 8:00-17:00 выходные: сб,вс</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="footer pattern col-lg-12">
+				<div class="row">
+					<div class="container">
+						<div class="col-lg-4 col-md-12"> <img src="images/logo.svg" alt="" class="img-responsive footer-logo"> </div>
+						<div class="col-lg-8 col-md-12">
+							<h3>160021 Россия, г. Вологда, ул. Клубова, д.87 e-mail: sales@maxi-net.ru</h3>
+							<p>*Указывая свой адрес электронной почты или телефон Вы выражаете согласие на получение с их использованием рекламы в любой форме. Вы вправе в любой момент отказаться от получения рекламы по телефону 8 (8172) 79-01-11 или направив сообщение по адресу lesn@maxi-net.ru</p>
+							<p>**Подробную информацию об условиях сотрудничества вы можете уточнить по телефону 8 (8172) 79-01-11</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
