@@ -331,10 +331,11 @@ input[type=text] {
 }
 
 #partner .item {
-	height: 30vh;
-	margin: 0 8%;
-	padding: 1em;
+	height: auto;
+	margin: 0 100px;
+	padding: 8em 0 2em 0;
 	border-radius: 10px;
+	margin-top: -3em;
 }
 
 .partner .parent-about p {
@@ -485,7 +486,7 @@ td .img-responsive {
 	height: 50px;
 	background-image: url('../images/right-arrow.png');
 	background-repeat: no-repeat;
-	background-position: 90%;
+	background-position: 100%;
 	background-size: contain;
 	position: relative;
 }
@@ -494,7 +495,7 @@ td .img-responsive {
 	height: 50px;
 	background-image: url('../images/arrow-right.png');
 	background-repeat: no-repeat;
-	background-position: 0%;
+	background-position: 16.5%;
 	background-size: contain;
 	position: relative;
 }
@@ -510,6 +511,7 @@ td .img-responsive {
 	height: 50px;
 	line-height: 50px;
 	font-weight: 800;
+	margin-left: -5%;
 }
 
 .sq {

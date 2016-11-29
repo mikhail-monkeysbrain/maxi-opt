@@ -266,3 +266,20 @@ span.arows{
 	width: auto;
 	margin: 0;
 }
+.ladder{
+	margin: .5em 0;
+}
+.scheme{
+	position: relative;
+} 
+.line {
+    position: absolute;
+    width: 2px;
+    height: 35em;
+    background: #B84848;
+    left: calc(50% + 1px);
+    top: 14em;
+}
+.ml11{
+	margin-left: 11px;
+}
