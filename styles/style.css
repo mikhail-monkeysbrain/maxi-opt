@@ -529,6 +529,7 @@ span.arows{
 		flex-wrap: wrap;
 	    justify-content: space-around;
 	}
+	.carousel-indicators{display: none;}
 	.logo{    
 		width: 100%;
 	    display: flex;
@@ -537,5 +538,127 @@ span.arows{
 	}
 	.logo img{
 		max-width: 100%;
+	}
+	.first-offer{
+		padding: 30px;
+	}
+	h1{
+		font-size: 2em;
+	}
+	h2{
+		font-size: 1.5em;
+	}
+	#tel, .form-control.custom-control.btn.btn-custom-grad {
+	    font-size: 14px;
+	    padding: 5px;
+	    text-align: center;
+	}
+	.form-group {
+	    max-width: 165px;
+	}
+	.price-group_product{
+		width: 30%;
+	}
+	.price-group_product span{
+		font-size: 16px;
+	}
+	.representatives-about_header{
+		font-size: 18px;
+	}
+	.representatives-about_paragraph{
+		font-size: 16px;
+	}
+	.btn-custom-red{
+		font-size: 14px;
+	}
+	.first-offer, #slider, #partner, #feedback, #diploma, #stuff, .panel-group {
+	    width: 100%;
+	}
+	.ladder .arrow-left img, .ladder .arrow-right img{
+		display: none;
+	}
+	.ladder .arrow-left, .ladder .arrow-right, .ladder .note{
+		font-size: 13px;
+	}
+	#feedback .item{
+		height: 495px;
+		max-height: 495px;
+		min-height: 495px;
+		overflow: hidden;
+	}
+	.carousel-control{
+		display: none;
+	}
+	.panel-group, .first-offer {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 640px){
+	.contact .address::before, .contact .phone::before, .contact .time::before{
+		display: none;
+	}
+	.contact .office .address, .contact .branches .address, .contact .office .phone, .contact .branches .phone, .contact .office .time, .contact .branches .time{
+		padding: 5px;
+	}
+	.advantages{
+		width: 85%;
+	}
+	.advantages-item {
+    	max-width: 50%;
+	}
+}
+@media screen and (max-width: 480px){
+	.advantages-item.imp{
+    	max-width: 100%;
+    	width: 100%;
+	}
+	.group_product {
+	    width: 50%;
+	}
+	.price-group_product{
+		width: 50%;
+	}
+	.panel-group, .download, .parent-about, .carousel {
+	    padding: 0 2%;
+	}
+	.pick{
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+	}
+	.form-group {
+	    max-width: 90%;
+	    margin: 10px auto;
+	}
+	p {
+	    font-size: 12px;
+	}
+	#stuff .about-vert {
+	    width: 30.33%;
+	}
+	.first-offer .row, #slider .row, #partner .row, #feedback .row, #diploma .row, #stuff .row {
+	    justify-content: center;
+	}
+	#stuff .carousel-inner {
+	    min-height: 290px;
+	}
+	.about-hor {
+	    min-width: 70%;
+	    width: 100%;
+	    max-width: 55%;
+	}
+	.ladder .arrow-right{
+		padding-right: 5px;
+	}
+	.ladder .arrow-left{
+		padding-left: 5px;
+	}
+	.price-group_product.card, .price-group_product{
+	    width: 90%;
+	}
+	#diploma .carousel-inner {
+	    min-height: 250px;
 	}
 }
