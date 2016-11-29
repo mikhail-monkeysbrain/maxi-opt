@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('.carousel').carousel();
+	//$('.carousel').carousel();
 	$('.collapse:not(#nav-btn)').collapse();
 	$("form").submit(function () {
 		// Получение ID формы

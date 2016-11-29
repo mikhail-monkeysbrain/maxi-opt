@@ -322,12 +322,13 @@ input[type=text] {
 }
 
 #feedback .item {
-	height: 60vh;
+	min-height: 550px;
 	overflow-y: auto;
 	padding: 3em;
 	margin: 0 8%;
 	background-color: #DED4D7;
 	border-radius: 10px;
+	margin-bottom: 5em;
 }
 
 #partner .item {
@@ -344,11 +345,16 @@ input[type=text] {
 
 .panel-title a {
 	color: #E20612;
-	font-weight: 800;
+	line-height: 24px;
+	font-size: 20px;
+	font-family: lato, sans-serif;
+	font-weight: 700;
 }
 
 .panel-body {
-	font-weight: 800;
+	line-height: 24px;
+	font-size: 20px;
+	font-family: lato, sans-serif;
 }
 
 .contact h3 {
@@ -524,91 +530,4 @@ td .img-responsive {
 	position: absolute;
 	left: 30%;
 	top: 20%;
-}
-
-@media all and (max-width: 992px) {
-	.scheme .parent-about .row .table {
-		display: table;
-	}
-	.special-offer {
-		padding-top: 1em;
-		min-height: 50vh !important;
-	}
-	h2 {
-		font-size: 1.5em;
-		padding-top: 2em;
-	}
-	#diploma .item .img-responsive {
-		width: 30% !important;
-		margin: 0 auto;
-	}
-	.scheme .parent-about .row:first-child {
-		display: none;
-	}
-	#partner .carousel-indicators {
-		display: none;
-	}
-	.about-hor {
-		display: block;
-		margin: 0 auto;
-		padding: 0;
-		min-height: 6em;
-		
-	}
-	.parent-about>.row>.about-hor>img.img-responsive {
-		max-width: 4em;
-    	height: auto;
-		float: none !important;
-		margin-right: 0 !important;
-		margin: 0 auto !important;
-	}
-	.parent-about>.row>.about-hor>div.content {
-		float: none !important;
-		text-align: center !important;
-	}
-	#ymaps1479993459935798380 {
-		height: 50vh !important;
-	}
-}
-
-@media all and (max-width: 450px) {
-	h1 {
-		font-size: 2em;
-	}
-	.navbar-brand>.img-responsive {
-		width: 50% !important;
-	}
-	.navbar-brand {
-		font-size: 1em;
-		text-align: center;
-		line-height: 2.9em;
-	}
-	.btn-custom-grad,
-	.btn-custom-red {
-		font-size: 1em;
-	}
-	.card {
-		width: 250px;
-	}
-	.about-hor {
-		display: block;
-		margin: 0 auto;
-		padding: 0;
-		min-height: 6em;
-		
-	}
-	.parent-about>.row>.about-hor>img.img-responsive {
-		max-width: 4em;
-    	height: auto;
-		float: none !important;
-		margin-right: 0 !important;
-		margin: 0 auto !important;
-	}
-	.parent-about>.row>.about-hor>div.content {
-		float: none !important;
-		text-align: center !important;
-	}
-	#ymaps1479993459935798380 {
-		height: 50vh !important;
-	}
 }
