@@ -217,7 +217,7 @@
 					</div>
 					<div class="price-group_product card">
 						<h4>ПОЛНЫЙ СПИСОК ТОВАРОВ ВЫ НАЙДЁТЕ В ПРАЙС ЛИСТЕ</h4>
-						<button type="button" class="btn btn-custom-red-red">Скачать
+						<button type="button" class="btn btn-custom-red-red mod">Скачать
 							<span class="arows"></span>
 						</button>
 					</div>
@@ -938,20 +938,34 @@
 		</div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<div class="hidden-block hidden">
+				<div class="form download col-lg-12">
+					<div class="close">x</div>
+					<h2>Скачайте прайс-лист прямо сейчас и получите скидку на свой первый заказ!</h2>
+					<div class="devider"></div>
+					<form id="download">
+						<div class="row">
+							<div class="form-group">
+								<input type="text" class="form-control custom-control" id="tel" placeholder="Телефон или E-mail**" required> </div>
+							<div class="form-group">
+								<input type="submit" class="form-control custom-control btn btn-custom-red" value="Скачайте прайс-лист"> </div>
+						</div>
+					</form>
+				</div>
+		</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/app.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.mod').click(function(){
+				$(".hidden-block").toggleClass("hidden");
+			});
+			$('.close').click(function(){
+				$(".hidden-block").toggleClass("hidden");
+			});
+		});
+	</script>
 </body>
 
 </html>

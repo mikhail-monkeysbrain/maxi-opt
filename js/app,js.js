@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	//$('.carousel').carousel();
+	$('.carousel').carousel();
 	$('.collapse:not(#nav-btn)').collapse();
 	$("form").submit(function () {
 		// Получение ID формы
@@ -20,5 +20,14 @@ $(document).ready(function () {
 			}
 		});
 		return false;
+	});
+});
+
+$(document).ready(function () {
+	$('.mod').click(function(){
+		$(".hidden-block").toggleClass("hidden");
+	});
+	$('.close').click(function(){
+		$(".hidden-block").toggleClass("hidden");
 	});
 });
